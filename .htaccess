@@ -1,0 +1,50 @@
+# ============================================================
+# .htaccess — Security config for Apache / cPanel hosting
+# ============================================================
+# This file only works if your hosting runs Apache (almost all
+# shared/cPanel hosting in Indonesia does). If you host on
+# Netlify/Vercel/Cloudflare Pages instead, use _headers or
+# vercel.json (see the other files provided) — .htaccess is
+# ignored there.
+# ============================================================
+
+# ---- 1. Force HTTPS ----
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ---- 2. Force www or non-www (pick ONE, uncomment the one you want) ----
+# Force www.yourdomain.com:
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [L,R=301]
+
+# Force yourdomain.com (no www):
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+# ---- 3. Security headers ----
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+  Header always set Content-Security-Policy "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors 'self'"
+</IfModule>
+
+# ---- 4. Disable directory listing ----
+Options -Indexes
+
+# ---- 5. Block access to hidden/dev files if they ever get uploaded by mistake ----
+<FilesMatch "^(build\.py|build_manifest\.json|\.git.*|README\.md)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.html
+</IfModule>
+
+# ---- 6. Custom 404 (optional, create 404.html if you want a friendly error page) ----
+# ErrorDocument 404 /404.html

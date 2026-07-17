@@ -1,0 +1,42 @@
+{
+  "about.html": {
+    "title_full": "About Us — Zudenbo Cakra Utama",
+    "description": "About PT Zudenbo Cakra Utama - our vision, mission, and values as an electrical, mechanical, and engineering contractor established in Indonesia."
+  },
+  "contact.html": {
+    "title_full": "Contact Us — Zudenbo Cakra Utama",
+    "description": "Get in touch with PT Zudenbo Cakra Utama via our contact form."
+  },
+  "environ.html": {
+    "title_full": "Environment — Zudenbo Cakra Utama",
+    "description": "PT Zudenbo Cakra Utama's commitment to sustainable, energy-efficient MEP solutions and environmentally responsible technologies."
+  },
+  "existing.html": {
+    "title_full": "Existing Buildings — Zudenbo Cakra Utama",
+    "description": "PT Zudenbo Cakra Utama's Design Engineering, Procurement, and Construction capabilities across Process, Piping, Mechanical, Electrical, Fire Fighting, and HVAC disciplines."
+  },
+  "index.html": {
+    "title_full": "Home — Zudenbo Cakra Utama",
+    "description": "PT Zudenbo Cakra Utama - Mechanical, Electrical, and Engineering Solutions (MEP) contractor committed to sustainable and energy-efficient building systems in Indonesia."
+  },
+  "newconstr.html": {
+    "title_full": "New Construction — Zudenbo Cakra Utama",
+    "description": "Project experience of PT Zudenbo Cakra Utama, including hotel and commercial tower projects across Indonesia."
+  },
+  "technical-bms.html": {
+    "title_full": "BMS Services — Zudenbo Cakra Utama",
+    "description": "Building automation and control technologies used by PT Zudenbo Cakra Utama, including BMS, BAS, CPOS, and CDU."
+  },
+  "technical-software.html": {
+    "title_full": "Software Tools — Zudenbo Cakra Utama",
+    "description": "Engineering services of PT Zudenbo Cakra Utama across Process, Mechanical, Piping, Electrical, and Instrument Engineering disciplines."
+  },
+  "technical.html": {
+    "title_full": "Technical — Zudenbo Cakra Utama",
+    "description": "Technology used by PT Zudenbo Cakra Utama, including HVAC, PLC, BMS, BAS, CPOS, and CDU systems."
+  },
+  "tenancies.html": {
+    "title_full": "Tenancies — Zudenbo Cakra Utama",
+    "description": "Project management services provided by PT Zudenbo Cakra Utama, from project execution planning through to progress reporting."
+  }
+}
